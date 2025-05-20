@@ -13,21 +13,20 @@ spec:
   {{- end }}
     image_pull_policy: {{ .Values.gateway.image_pull_policy }}
     
-    api:
-      replicas: {{ .Values.gateway.replicas }}
-      {{- if .Values.gateway.replicate_based_on_AZ }}
-      topology_spread_constraints:
-       - topologyKey: topology.kubernetes.io/zone
-         whenUnsatisfiable: DoNotSchedule
-         maxSkew: 1
-         labelSelector:
-           matchExpressions:
-             - key: app.kubernetes.io/component
-               operator: In
-               values:
-                  - aap-gateway
-    
-      {{- end }}
+  api:
+    replicas: {{ .Values.gateway.replicas }}
+    {{- if .Values.gateway.replicate_based_on_AZ }}
+    topology_spread_constraints:
+      - topologyKey: topology.kubernetes.io/zone
+        whenUnsatisfiable: DoNotSchedule
+        maxSkew: 1
+        labelSelector:
+          matchExpressions:
+            - key: app.kubernetes.io/component
+              operator: In
+              values:
+                - aap-gateway
+    {{- end }}
    
       {{- if .Values.gateway.resource_requirements }}
       resource_requirements:
