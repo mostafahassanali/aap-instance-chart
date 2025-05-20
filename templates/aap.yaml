@@ -40,9 +40,15 @@ spec:
 
 
   controller:
-  {{- if .Values.eePullSecret.manage }}
+    {{- if .Values.controller.projects_persistence }}
+    projects_persistence: true
+    projects_storage_size: {{ .Values.controller.projects_storage_size }}
+    projects_storage_class: {{ .Values.controller.projects_storage_class }}
+    projects_storage_access_mode: {{ .Values.controller.projects_storage_access_mode }}
+    {{- end }}
+    {{- if .Values.eePullSecret.manage }}
     ee_pull_credentials_secret: ee-pull-secret
-  {{- end }}
+    {{- end }}
     disabled: false
     {{- if .Values.controller.use_external_db }}
     postgres_configuration_secret: {{ .Values.controller.external_db_secret }}
@@ -110,10 +116,10 @@ spec:
          maxSkew: 1
          labelSelector:
            matchExpressions:
-             - key: app.kubernetes.io/component
+             - key: app.kubernetes.io/managed-by
                operator: In
                values:
-                  - aap-eda
+                  - eda-operator
       {{- end }}
 
   
