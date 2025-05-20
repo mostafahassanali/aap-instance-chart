@@ -8,9 +8,9 @@ metadata:
 spec:
 
   database:
-{{- if .Values.gateway.use_external_db }}
+  {{- if .Values.gateway.use_external_db }}
     database_secret: {{ .Values.gateway.external_db_secret }}
-{{- end }}
+  {{- end }}
     image_pull_policy: {{ .Values.gateway.image_pull_policy }}
     
     api:
@@ -41,13 +41,13 @@ spec:
 
 
   controller:
-{{- if .Values.eePullSecret.manage }}
+  {{- if .Values.eePullSecret.manage }}
     ee_pull_credentials_secret: ee-pull-secret
-{{- end }}
+  {{- end }}
     disabled: false
     {{- if .Values.controller.use_external_db }}
     postgres_configuration_secret: {{ .Values.controller.external_db_secret }}
-   {{- end }}
+    {{- end }}
     task_replicas: {{ .Values.controller.task_replicas }}
     web_replicas: {{ .Values.controller.web_replicas }}
 
@@ -63,16 +63,15 @@ spec:
               values:
                   - automationcontroller
     {{- end }}
-   
     {{- if .Values.controller.task_resource_requirements }}
     task_resource_requirements:
-        requests:
-          cpu: {{ .Values.controller.task_requests_cpu }}
-          memory: {{ .Values.controller.task_requests_memory }}
-        limits:
-          cpu: {{ .Values.controller.task_limits_cpu }}
-          memory: {{ .Values.controller.task_limits_memory }}
-      {{- end }}
+      requests:
+        cpu: {{ .Values.controller.task_requests_cpu }}
+        memory: {{ .Values.controller.task_requests_memory }}
+      limits:
+        cpu: {{ .Values.controller.task_limits_cpu }}
+        memory: {{ .Values.controller.task_limits_memory }}
+    {{- end }}
 
     {{- if .Values.controller.web_resource_requirements }}
 
@@ -83,7 +82,7 @@ spec:
         limits:
           cpu: {{ .Values.controller.web_limits_cpu }}
           memory: {{ .Values.controller.web_limits_memory }}
-      {{- end }}
+    {{- end }}
 
 
 
@@ -96,6 +95,7 @@ spec:
     api:
       replicas: {{ .Values.eda.replicas }}
       {{- if .Values.eda.resource_requirements }}
+      resource_requirements:
         requests:
           cpu: {{ .Values.eda.requests_cpu }}
           memory: {{ .Values.eda.requests_memory }}
