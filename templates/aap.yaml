@@ -51,7 +51,7 @@ spec:
     {{- end }}
     disabled: false
     {{- if .Values.controller.use_external_db }}
-    postgres_configuration_secret: {{ .Values.controller.external_db_secret }}
+    postgres_configuration_secret: {{ .Values.controller.postgres_configuration_secret }}
     {{- end }}
     task_replicas: {{ .Values.controller.task_replicas }}
     web_replicas: {{ .Values.controller.web_replicas }}
