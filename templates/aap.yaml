@@ -186,5 +186,17 @@ spec:
           memory: {{ .Values.hub.worker_limits_memory }}
       {{- end }}
 
+    api:
+      replicas: {{ .Values.hub.api_replicas }}
+      {{- if .Values.hub.api_resource_requirements }}
+      resource_requirements:
+        requests:
+          cpu: {{ .Values.hub.api_requests_cpu }}
+          memory: {{ .Values.hub.api_requests_memory }}
+        limits:
+          cpu: {{ .Values.hub.api_limits_cpu }}
+          memory: {{ .Values.hub.api_limits_memory }}
+      {{- end }}
+
   lightspeed:
     disabled: {{ coalesce .Values.aap.lightspeed_disabled "false" }}
