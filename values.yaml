@@ -74,9 +74,11 @@ hub:
   web_replicas: 3
   content_replicas: 3
   worker_replicas: 3
+  api_replicas: 3
   web_resource_requirements: true
   content_resource_requirements: true
   worker_resource_requirements: true
+  api_resource_requirements: true
   web_requests_cpu: 1
   web_requests_memory: 8Gi 
   web_limits_cpu: 1
@@ -86,9 +88,13 @@ hub:
   content_limits_cpu: 1
   content_limits_memory: 8Gi
   worker_requests_cpu: 2
-  worker_requests_memory: 16Gi
+  worker_requests_memory: 8Gi
   worker_limits_cpu: 2
-  worker_limits_memory: 16Gi
+  worker_limits_memory: 8Gi
+  api_requests_cpu: 2
+  api_requests_memory: 8Gi
+  api_limits_cpu: 2
+  api_limits_memory: 8Gi
 
 
 secretStore:
