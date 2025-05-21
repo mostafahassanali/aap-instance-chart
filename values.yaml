@@ -2,6 +2,9 @@
 global:
   hubClusterDomain: example.com
   namespace: aap-enterprise
+  clusterGroup:
+    name: example
+    isHubCluster: true
 
 eePullSecret:
   manage: false
