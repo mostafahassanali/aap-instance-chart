@@ -31,10 +31,10 @@ spec:
       {{- if .Values.gateway.resource_requirements }}
       resource_requirements:
         requests:
-          cpu: {{ .Values.gateway.requests_cpu }}
+          cpu: "{{ .Values.gateway.requests_cpu }}"
           memory: {{ .Values.gateway.requests_memory }}
         limits:
-          cpu: {{ .Values.gateway.limits_cpu }}
+          cpu: "{{ .Values.gateway.limits_cpu }}"
           memory: {{ .Values.gateway.limits_memory }}
       {{- end }}
 
@@ -71,10 +71,10 @@ spec:
     {{- if .Values.controller.task_resource_requirements }}
     task_resource_requirements:
       requests:
-        cpu: {{ .Values.controller.task_requests_cpu }}
+        cpu: "{{ .Values.controller.task_requests_cpu }}"
         memory: {{ .Values.controller.task_requests_memory }}
       limits:
-        cpu: {{ .Values.controller.task_limits_cpu }}
+        cpu: "{{ .Values.controller.task_limits_cpu }}"
         memory: {{ .Values.controller.task_limits_memory }}
     {{- end }}
 
@@ -82,10 +82,10 @@ spec:
 
     web_resource_requirements:
         requests:
-          cpu: {{ .Values.controller.web_requests_cpu }}
+          cpu: "{{ .Values.controller.web_requests_cpu }}"
           memory: {{ .Values.controller.web_requests_memory }}
         limits:
-          cpu: {{ .Values.controller.web_limits_cpu }}
+          cpu: "{{ .Values.controller.web_limits_cpu }}"
           memory: {{ .Values.controller.web_limits_memory }}
     {{- end }}
 
@@ -102,10 +102,10 @@ spec:
       {{- if .Values.eda.resource_requirements }}
       resource_requirements:
         requests:
-          cpu: {{ .Values.eda.requests_cpu }}
+          cpu: "{{ .Values.eda.requests_cpu }}"
           memory: {{ .Values.eda.requests_memory }}
         limits:
-          cpu: {{ .Values.eda.limits_cpu }}
+          cpu: "{{ .Values.eda.limits_cpu }}"
           memory: {{ .Values.eda.limits_memory }}
       {{- end }}  
   
@@ -155,10 +155,10 @@ spec:
       {{- if .Values.hub.web_resource_requirements }}
       resource_requirements:
         requests:
-          cpu: {{ .Values.hub.web_requests_cpu }}
+          cpu: "{{ .Values.hub.web_requests_cpu }}"
           memory: {{ .Values.hub.web_requests_memory }}
         limits:
-          cpu: {{ .Values.hub.web_limits_cpu }}
+          cpu: "{{ .Values.hub.web_limits_cpu }}"
           memory: {{ .Values.hub.web_limits_memory }}
       {{- end }}
 
@@ -167,10 +167,10 @@ spec:
       {{- if .Values.hub.content_resource_requirements }}
       resource_requirements:
         requests:
-          cpu: {{ .Values.hub.content_requests_cpu }}
+          cpu: "{{ .Values.hub.content_requests_cpu }}"
           memory: {{ .Values.hub.content_requests_memory }}
         limits:
-          cpu: {{ .Values.hub.content_limits_cpu }}
+          cpu: "{{ .Values.hub.content_limits_cpu }}"
           memory: {{ .Values.hub.content_limits_memory }}
       {{- end }}
 
@@ -179,10 +179,10 @@ spec:
       {{- if .Values.hub.worker_resource_requirements }}
       resource_requirements:
         requests:
-          cpu: {{ .Values.hub.worker_requests_cpu }}
+          cpu: "{{ .Values.hub.worker_requests_cpu }}"
           memory: {{ .Values.hub.worker_requests_memory }}
         limits:
-          cpu: {{ .Values.hub.worker_limits_cpu }}
+          cpu: "{{ .Values.hub.worker_limits_cpu }}"
           memory: {{ .Values.hub.worker_limits_memory }}
       {{- end }}
 
@@ -191,10 +191,10 @@ spec:
       {{- if .Values.hub.api_resource_requirements }}
       resource_requirements:
         requests:
-          cpu: {{ .Values.hub.api_requests_cpu }}
+          cpu: "{{ .Values.hub.api_requests_cpu }}"
           memory: {{ .Values.hub.api_requests_memory }}
         limits:
-          cpu: {{ .Values.hub.api_limits_cpu }}
+          cpu: "{{ .Values.hub.api_limits_cpu }}"
           memory: {{ .Values.hub.api_limits_memory }}
       {{- end }}
 
