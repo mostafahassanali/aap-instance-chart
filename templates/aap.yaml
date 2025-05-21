@@ -11,7 +11,7 @@ spec:
   {{- if .Values.gateway.use_external_db }}
     database_secret: {{ .Values.gateway.external_db_secret }}
   {{- end }}
-    image_pull_policy: {{ .Values.gateway.image_pull_policy }}
+  image_pull_policy: {{ .Values.gateway.image_pull_policy }}
     
   api:
     replicas: {{ .Values.gateway.replicas }}
