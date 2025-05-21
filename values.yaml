@@ -20,9 +20,9 @@ gateway:
   replicas: 3
   replicate_based_on_AZ: true
   resource_requirements: true
-  requests_cpu: 4
+  requests_cpu: "4"
   requests_memory: 16Gi
-  limits_cpu: 4
+  limits_cpu: "4"
   limits_memory: 16Gi
 
 controller:
@@ -35,14 +35,14 @@ controller:
   task_replicas: 3
   web_replicas: 3
   replicate_based_on_AZ: true
-  task_requests_cpu: 2
+  task_requests_cpu: "2"
   task_requests_memory: 8Gi
-  task_limits_cpu: 2
+  task_limits_cpu: "2"
   task_limits_memory: 8Gi
 
-  web_requests_cpu: 2
+  web_requests_cpu: "2"
   web_requests_memory: 8Gi
-  web_limits_cpu: 2
+  web_limits_cpu: "2"
   web_limits_memory: 8Gi
 
   task_resource_requirements: true
@@ -55,9 +55,9 @@ eda:
   external_db_secret: aap-eda-postgres-configuration
   replicas: 3
   resource_requirements: true
-  requests_cpu: 4
+  requests_cpu: "4"
   requests_memory: 16Gi
-  limits_cpu: 4
+  limits_cpu: "4"
   limits_memory: 16Gi
   replicate_based_on_AZ: true
 
@@ -79,21 +79,21 @@ hub:
   content_resource_requirements: true
   worker_resource_requirements: true
   api_resource_requirements: true
-  web_requests_cpu: 1
+  web_requests_cpu: "1"
   web_requests_memory: 8Gi 
-  web_limits_cpu: 1
+  web_limits_cpu: "1"
   web_limits_memory: 8Gi 
-  content_requests_cpu: 1
+  content_requests_cpu: "1"
   content_requests_memory: 8Gi
-  content_limits_cpu: 1
+  content_limits_cpu: "1"
   content_limits_memory: 8Gi
-  worker_requests_cpu: 2
+  worker_requests_cpu: "2"
   worker_requests_memory: 8Gi
-  worker_limits_cpu: 2
+  worker_limits_cpu: "2"
   worker_limits_memory: 8Gi
-  api_requests_cpu: 2
+  api_requests_cpu: "2"
   api_requests_memory: 8Gi
-  api_limits_cpu: 2
+  api_limits_cpu: "2"
   api_limits_memory: 8Gi
 
 
