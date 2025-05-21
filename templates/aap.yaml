@@ -15,7 +15,7 @@ spec:
     
   api:
     replicas: {{ .Values.gateway.replicas }}
-    {{- if .Values.gateway.replicate_based_on_AZ }}
+  {{- if .Values.gateway.replicate_based_on_AZ }}
     topology_spread_constraints:
       - topologyKey: topology.kubernetes.io/zone
         whenUnsatisfiable: DoNotSchedule
@@ -26,10 +26,10 @@ spec:
               operator: In
               values:
                 - aap-gateway
-    {{- end }}
+  {{- end }}
    
       {{- if .Values.gateway.resource_requirements }}
-      resource_requirements:
+    resource_requirements:
         requests:
           cpu: "{{ .Values.gateway.requests_cpu }}"
           memory: {{ .Values.gateway.requests_memory }}
